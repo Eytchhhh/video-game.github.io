@@ -1,0 +1,41 @@
+<div class="filters mt-5 ">
+    <mat-form-field>
+        <mat-label>Sort</mat-label>
+        <mat-select
+         panelCLass="sort-select"
+         [(ngModel)]="sort"
+         (selectionChange)="searchGames(sort)"
+        >
+            <mat-option value="name">Name</mat-option>
+            <mat-option value="-released">Released</mat-option>
+            <mat-option value="-added">Added</mat-option>
+            <mat-option value="-created">Created</mat-option>
+            <mat-option value="-updated">Updated</mat-option>
+            <mat-option value="-rating">Rating</mat-option>
+            <mat-option value="metacritic">Metacritic</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="container-fluid games  mt-3">
+        <div  class="row game gy-5 mx-5">
+            <div  *ngFor="let game of games" class="col-md-3 text-center">
+                <div class="card rounded game-thumb-container"(click)="openGameDetails(game.id)">
+                    <img
+                    *ngIf="game.background_image"
+                     src="{{ game.background_image}}"
+                    alt="thumbnail" class="game-thumbnail rounded">
+                    <p class="p-5" *ngIf="!game.background_image"> No Image Shown</p>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{game.name}}</h5>
+                        <div class="game-platforms">
+                            <img 
+                            *ngFor="let gamePlatform of game.parent_platforms"
+                             class="game-platform mx-2"src="assets/images/platforms/{{gamePlatform.platform.slug}}.svg" 
+                             alt="{{gamePlatform.platform.slug}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

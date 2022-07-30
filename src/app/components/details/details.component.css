@@ -1,0 +1,30 @@
+.game-banner-img{
+    filter: blur(5px);
+    width: 99vw;
+}
+.game-gauge {
+    width: 10vw;
+   position:absolute;
+   top:60%;
+   right: 10%;
+}
+.game-gauge-label{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+.game-header-title {
+    font-size: 5vw;
+    color: rgb(47, 61, 190);
+    
+}
+.game-header-release-date {
+    font-size: 2vw;
+}
+.game-header-genres {
+    font-size: 1vw;
+}
+.game-content{
+    position: relative;
+    top: -400px;
+}

@@ -1,0 +1,23 @@
+.container-fluid{
+    background-color: rgb(23, 107, 175);
+    color:#fff;
+    line-height: 1.6rem;
+    word-spacing: 0.2rem;
+}
+p{
+    font-style: italic;
+}
+h1 {
+    letter-spacing: 0.1rem;
+}
+ul {
+    list-style-type: none;
+    line-height: 1.5rem;
+}
+li a{
+    text-decoration: none;
+    color: #fff;
+}
+li a:hover{
+    color:rgb(0, 0, 0);
+}

@@ -1,0 +1,23 @@
+.container{
+    margin-top:-10vw;
+    
+}
+.game-votes-up{
+    color: #5ee432;
+}
+.game-votes-down{
+    color: #ef4655;
+}
+.game-votes-count{
+    vertical-align: super;
+}
+.game-description{
+    text-align: justify;
+    line-height: 2rem;
+    word-spacing: 0.1rem;
+    letter-spacing: 0.1rem;
+}
+.game-screeshot{
+    height: 30vh;
+    width: 30vw;
+}

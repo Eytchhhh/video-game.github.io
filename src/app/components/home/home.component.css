@@ -1,0 +1,46 @@
+
+.filters{
+    max-width: 1200px;
+    margin-left:10.5%;
+}
+
+.card {
+    width:75%;
+    transition: all 0.5s;
+    background-color :#000;
+    color:#fff;
+    
+}
+.btn-solo {
+    border: 1px solid #000;
+}
+.game-thumbnail {
+    height: 20vh;
+    
+}
+.games {
+    width: auto;
+    margin-left: 6.5%;
+}
+.game-platforms{
+    height: 50px;
+    
+}
+.game-platform{
+    height: 2vh;
+
+    
+}
+/*HOVER EFFECTS*/
+.card:hover{
+    box-shadow: 1px 4px 15px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 4px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 4px 15px 0px rgba(0,0,0,0.75);
+    transform: 1;
+    background-color: rgb(4, 15, 100);
+    color: #fff;
+}
+.btn-solo:hover {
+    background-color: rgb(65, 9, 9);
+    color: #fff;
+}

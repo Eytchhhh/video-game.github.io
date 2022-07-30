@@ -1,0 +1,60 @@
+<div class="container text-center">
+    <div class="game-tabs">
+        <mat-tab-group mat-align-tabs="center" backgroundColor="primary">
+            <mat-tab label="About" >
+                <p *ngIf="game.parent_platforms?.length" class="game-tabs-par mt-5 p-2">
+                    Platforms:
+                    <span *ngFor="let game of game.parent_platforms; let last = last;">
+                    {{ game.platform.name}}<span *ngIf="!last">, </span>
+                    </span>
+                </p>
+                <p *ngIf="game.publishers?.length" class="game-tabs-par p-2">
+                    Publishers:
+                    <span *ngFor="let publisher of game.publishers; let last = last">
+                        {{publisher.name}}<span *ngIf="!last">, </span>
+                    </span>
+                </p>
+                <p *ngIf="game.website"class="game-tabs-par p-2">
+                    Website:
+                    <a class="game-tabs-link" href="game.website" target="_blank">{{game.website}}</a>
+                </p>
+                <div class="game-description p-2"[innerHTML]="game.description"></div>
+                <p class="game-tabs-votes">
+                    <ng-container *ngFor="let rating of game.ratings">
+                        <span *ngIf="rating.title === 'exceptional'">
+                            <mat-icon class="game-votes-up mx-3">thumb_up</mat-icon>
+                            <span class="game-votes-count">{{rating.count || 0}}</span>
+                        </span>
+                        <span *ngIf="rating.title === 'skip'">
+                            <mat-icon class="game-votes-down mx-3">thumb_down</mat-icon>
+                            <span class="game-votes-count">{{rating.count || 0}}</span>
+                        </span>
+                    </ng-container>
+                 </p>
+               
+            </mat-tab>
+            <mat-tab label="Screenshots" *ngIf="game.screenshots?.length">
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-md-6 gy-5" *ngFor="let screenshot of game.screenshots">
+                            <img src={{screenshot.image}} alt="Screenshots" class="game-screeshot">
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Trailers" *ngIf="game.trailers?.length">
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-md-6 gy-5" *ngFor="let trailer of game.trailers">
+                                <video class="game-trailer img-fluid" controls
+                                    >
+                                <source src="{{ trailer.data?.max }}" type="video/mp4">
+                                Your browser does not support the video tag
+                             </video>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
